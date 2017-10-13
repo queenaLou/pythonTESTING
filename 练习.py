@@ -123,3 +123,5 @@ print(a) #[1,666,4,5]
 
 #切片
 my_foods = ['pizza','noodle','rice','photo','corn']
+
+#多谢俩字
