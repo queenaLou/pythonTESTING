@@ -123,6 +123,12 @@ print(a) #[1,666,4,5]
 
 #切片
 my_foods = ['pizza','noodle','rice','photo','corn']
+friend_foods = my_foods[:]
+friend_foods.append('pear')
+print("My favorite foods are:")
+print(my_foods)
+print("My friend's favorite foods are:")
+print(friend_foods)
 
 #input
 prompt = 'hello'
