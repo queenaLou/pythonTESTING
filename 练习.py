@@ -2,10 +2,15 @@
 import datetime,time
 
 username = " \n \t elBert einstein  \n    "
-message1 = "{} once said,'A person who never made a mistake never tried anything new.'".format(' '.join([i.capitalize() for i in username.rstrip().lstrip().split()]))
-message2 = "{} once said,'A person who never made a mistake never tried anything new.'".format(username.lstrip().rstrip().title())
-print(message1) # Elbert Einstein once said,'A person who never made a mistake never tried anything new.'
-print(message2) # Elbert Einstein once said,'A person who never made a mistake never tried anything new.'
+message1 = "{} once said,'A person who never made a mistake " \
+           "never tried anything new.'".format(' '
+            .join([i.capitalize() for i in username.rstrip().lstrip().split()]))
+message2 = "{} once said,'A person who never made a mistake " \
+           "never tried anything new.'".format(username.lstrip().rstrip().title())
+print(message1)
+# Elbert Einstein once said,'A person who never made a mistake never tried anything new.'
+print(message2)
+# Elbert Einstein once said,'A person who never made a mistake never tried anything new.'
 
 # print(username.title())
 
@@ -130,4 +135,176 @@ print(my_foods)
 print("My friend's favorite foods are:")
 print(friend_foods)
 
-#多谢俩字
+#元祖
+restaurant_foods = ('noodle','pizza')
+print(restaurant_foods)
+restaurant_foods = ('rice','pizza')
+print("Modified foods:")
+print(restaurant_foods)
+
+#if
+cars = ['audi','bmw','subaru','toyota']
+for car in cars:
+    if car.lower() == 'bmw':
+        print(car.upper())
+    else:
+        print(car.title())
+
+#游乐场价格
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+elif age >= 65:
+    price = 5
+print("Your admission cost is ${}.".format(price))
+#顾客要求配料
+available_toppings = ['mushrooms','olives','green peppers',
+                      'pepperonis','pineapples','extra cheese']
+requested_toppings = ['mushrooms','extra cheese','green peppers','french fries']
+if 'mushrooms' in requested_toppings:
+    print('Ading mushrooms!')
+if 'pepperoni' in requested_toppings:
+    print('Adding pepperoni!')
+if 'extra cheese' in requested_toppings:
+    print('Adding extra cheese!')
+print('Finished making your pizza!')
+if requested_toppings :
+    for requested_topping in requested_toppings:
+        if requested_topping == 'green peppers':
+            print('Sorry,we are out of green peppers right now!')
+        elif requested_topping in available_toppings:
+            print('Adding {}!'.format(requested_topping))
+        else:
+            print("Sorry,we don't have {}.".format(requested_topping))
+    print('Finished making your pizza!')
+else:
+    print('Are you sure you want a plain pizza!')
+
+#alien外星人
+alien_color = ['green','yellow','red']
+died_aliens = ['green','red','yellow']
+for died_alien in died_aliens:
+    if died_alien == 'green':
+        print('{}:恭喜你获得了5个点！'.format(died_alien.title()))
+    elif died_alien == 'yellow':
+        print("{}:恭喜你获得了10个点！".format(died_alien.title()))
+    elif died_alien == 'red':
+        print("{}:恭喜你获得了15个点！".format(died_alien.title()))
+# if died_alien1 == 'green':
+#     print('恭喜你获得了5个点！')
+# died_alien2 = 'red'
+# if died_alien2 == 'green':
+#     print('恭喜你获得了5个点！')
+
+#用户
+login_users = ['lisa','david','admin','sophia','queena']
+if login_users:
+    for login_user in login_users:
+        if login_user.lower() == 'admin':
+            print("Hello {},would you like to see a status report?".format(
+                login_user))
+        else:
+            print("Hello {},thank you for logging in again.".format(
+                login_user.title()))
+else:
+    print('We need to find some users!')
+
+current_users = ['lisa','queena','lily','lucy','jack']
+new_users = ['lily','david','queena','sophia','tang']
+for new_user in new_users:
+    if new_user.lower() in current_users:
+        print("此用户名{}已经被使用！".format(new_user))
+    else:
+        print("此用户名{}未被使用！".format(new_user))
+
+#序数
+ordinals = range(1,10)
+for ordinal in ordinals:
+    if ordinal == 1:
+        print('{}st'.format(ordinal))
+    elif ordinal == 2:
+        print('{}nd'.format(ordinal))
+    elif ordinal == 3:
+        print('{}rd'.format(ordinal))
+    else:
+        print('{}th'.format(ordinal))
+
+#字典
+alien_0 = {'color':'green','points':5}
+print(alien_0)
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+alien_0['color'] = 'yellow'
+print(alien_0)
+def get_x_increment(x_speed):
+    if x_speed == 'slow':
+        x_increment = 1
+    elif x_speed == 'medium':
+        x_increment = 2
+    else:
+        x_increment = 3
+    return x_increment
+alien_0['speed'] = 'medium'
+alien_0['x_position'] += get_x_increment(alien_0['speed'])
+print(alien_0)
+alien_0['speed'] = 'fast'
+alien_0['x_position'] += get_x_increment(alien_0['speed'])
+print(alien_0)
+
+polls = {
+    'ervin':['python','c'],
+    'david':['c'],
+    'lucy' : ['ruby','go'],
+    'lisa' : ['java','php'],
+    'queena' : ['python'],
+}
+friends = ['david','lisa','ervin']
+for poll_key in sorted(polls.keys()):
+    if poll_key.lower() in friends:
+        if len(polls[poll_key]) > 1:
+            print('Hi {},I see your favorite languages are:'
+                  .format(poll_key.title()))
+            for language in polls[poll_key]:
+                print(language.title())
+        elif len(polls[poll_key]) == 1:
+            print("Hi {},I see your favorite language is {}."
+                  .format(poll_key.title(),polls[poll_key][0].title()))
+print("以下是每位调查者的回答。")
+for language in polls.values():
+    print(language)
+
+#嵌套
+alien_1 = {'color':'green','points':10}
+alien_2 = {'color':'red','points':15}
+aliens = [alien_0,alien_1,alien_2]
+for alien in aliens:
+    print(alien)
+
+#初始化创建多个外星人
+aliens = []
+for alien_number in range(30):
+    new_alien = {'color':'red','points':15,'speed':'slow'}
+    aliens.append(new_alien)
+for alien in aliens[:3]:
+    if alien['color'] == 'red':
+        alien['color'] = 'yellow'
+        alien['points'] = 5
+        alien['speed'] = 'medium'
+for alien in aliens[:5]:
+    print(alien)
+print('...')
+print("共创建了{}个外星人.".format(len(aliens)))
+
+#存储客户点的披萨
+pizza = {
+    'crust':'thick',
+    'topping':['mushrooms','green peppers','extra cheese'],
+}
+print("You ordered a {}-crust pizza with the following toppings:".format(pizza['crust']))
+for topping in set(pizza['topping']):
+    print(topping)
