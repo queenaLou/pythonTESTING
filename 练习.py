@@ -135,12 +135,6 @@ print(my_foods)
 print("My friend's favorite foods are:")
 print(friend_foods)
 
-#input
-prompt = 'hello'
-message = ''
-while message != 'quit':
-    message = input(prompt)
-    print(message)
 #元祖
 restaurant_foods = ('noodle','pizza')
 print(restaurant_foods)
@@ -314,3 +308,10 @@ pizza = {
 print("You ordered a {}-crust pizza with the following toppings:".format(pizza['crust']))
 for topping in set(pizza['topping']):
     print(topping)
+
+#input
+prompt = 'hello'
+message = ''
+while message != 'quit':
+    message = input(prompt)
+    print(message)
