@@ -308,3 +308,14 @@ pizza = {
 print("You ordered a {}-crust pizza with the following toppings:".format(pizza['crust']))
 for topping in set(pizza['topping']):
     print(topping)
+
+#while循环
+prompt = "Hi,please enter your message.If you want end the program,please enter quit."
+message = ""
+while message != "quit":
+    message = input(prompt)
+    if message != "quit":
+        print(message)
+
+#while 改良
+active = True
