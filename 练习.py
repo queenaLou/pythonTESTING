@@ -310,12 +310,76 @@ for topping in set(pizza['topping']):
     print(topping)
 
 #while循环
-prompt = "Hi,please enter your message.If you want end the program,please enter quit."
-message = ""
-while message != "quit":
-    message = input(prompt)
-    if message != "quit":
-        print(message)
+prompt = "Hi,please enter your message."
+prompt += "If you want end the program,please enter quit."
+# message = ""
+# while message != "quit":
+#     message = input(prompt)
+#     if message != "quit":
+#         print(message)
 
-#while 改良
-active = True
+#while 改良:用active标志
+# active = True
+# while active:
+# 	message = input(prompt)
+# 	if message == 'quit':
+# 		active = False
+# 	else:
+# 		print(message)
+
+# #跳出循环：break
+# while True:
+# 	message = input(prompt)
+# 	if message == 'quit':
+# 		break
+# 	else:
+# 		print(message)
+
+#跳出当前循环：continue
+#避免无限循环
+# current_number = 10
+# while current_number > 0:
+# 	if current_number % 2 == 1:
+# 		print("当前奇数为：%d" % current_number)
+# 		current_number -= 1
+# 	else:
+# 		current_number -= 1
+# 		continue
+
+#打印顾客要求的配料
+# prompt = "Hi,please enter your wants:"
+# while True:
+# 	wants = input(prompt)
+# 	if wants != 'quit':
+# 		print("Got it!We will prepair %s for you !" % wants)
+# 	else:
+# 		print("我们将为您准备以上材料，请稍后")
+# 		break
+
+#电影院票价
+def get_price_by_age(age):
+	price = 15
+	if age < 3:
+		price = 0
+	elif age < 12:
+		price = 10
+	return price
+
+while True:
+	prompt = "请输入您的年龄："
+	message = input(prompt)
+	try:
+		age = int(message)
+		price = get_price_by_age(age)
+		message = "您好，您的票价是%d元。" % price
+		message += "\n如想退出，请输入quit"
+		print(message)
+	except:
+		if message == 'quit':
+			print("感谢您的使用!")
+			break
+		else:
+			message = "您输入的年龄有误，请输入一个数字，如：25"
+			message += "\n如想退出，请输入quit"
+			print(message)
+			continue
